@@ -393,7 +393,7 @@ class Usuario extends DashboardController {
                     $resultado = $this->m_usuario->actualizar($columnaDatos, array( 'usuario.id' => $usuarioId ));
                     if(!empty($resultado)){
                         $message = sprintf(error_helper::msg()->msg503,$usuario);
-                        //echo alerta_exito($message,3);
+                        echo alerta_exito($message,3);
                         EXIT();
                     }
                     if($msjError){
