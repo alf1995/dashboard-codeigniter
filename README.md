@@ -62,8 +62,6 @@ Panel de administración basico usando codeigniter 3 y el tema adminlte3.
 - Para acceder al panel de administración ingresaremos la url **/dashboard** :
 ```
 Usuario:
-
-  Admin:
    - Usuario: admin@gmail.com
    - Contraseña: admin123
     
@@ -81,11 +79,11 @@ Usuario:
 
 ![Imagen de modulo permisos](https://i.imgur.com/BNW9X2V.png)
 
-- Opcion para que el usuario pueda recuperar su contraseña mediante correo:
+- Opción para que el usuario pueda recuperar su contraseña mediante correo:
 
 ![Imagen de modulo permisos](https://i.imgur.com/Q2WeTLr.png)
 
-- Correo de recuperacion de cuenta:
+- Correo de recuperación de cuenta:
 
 ![Imagen de modulo permisos](https://i.imgur.com/QkMPaR4.png)
 
