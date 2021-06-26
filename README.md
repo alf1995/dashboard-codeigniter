@@ -5,6 +5,10 @@ Panel de administración basico usando codeigniter 3 y el tema adminlte3.
 
 - Este es un panel de administración basado en codeigniter que nos permite administrar usuarios y gestionar permisos de los modulo de manera independiente por cada usuario.
 
+# Requerimientos
+
+- PHP 7.2 o superior
+
 # Instalación
 ```
   # clonar el repositorio
