@@ -1,4 +1,4 @@
-<?
+<?php
 
 require_once APPPATH.'libraries/Model_DB.php';
 
