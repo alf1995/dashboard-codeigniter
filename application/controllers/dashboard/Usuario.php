@@ -431,7 +431,7 @@ class Usuario extends DashboardController {
                 if($this->m_usuario->existe($id)){
                     $condiciones = array(
                         'usuario.eliminacion_logica' => 1,
-                        'usuario.rol_id' != 500,
+                        'usuario.rol_id !=' => 500,
                         'usuario.id' => $id
                     );
                     $usuario = $this->m_usuario->mostrar_datos($condiciones);
