@@ -516,6 +516,4 @@ class Usuario extends DashboardController {
                 return FALSE;
         }
     }
-    
-
 }
