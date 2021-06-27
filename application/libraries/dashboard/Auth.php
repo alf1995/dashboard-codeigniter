@@ -246,9 +246,7 @@ class Auth {
             ),
         );
         /* ----------------------------------------------------------- */
-        $condiciones_modulo = array(
-           
-        );
+        $condiciones_modulo = array();
         $getBdModulo = $this->ci->m_roles_modulo->mostrar_datos($condiciones_modulo);
         $configModulo = ($this->ci->accesoSession->accesoTmpNivel == 500) ? config_admin()['sisModulo'] : array();
         $obtieneModulo =  (!empty($getBdModulo)) ? $getBdModulo : $configModulo;
