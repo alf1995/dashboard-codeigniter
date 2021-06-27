@@ -118,6 +118,9 @@ class Model_DB {
         if( (is_array($datos)) && (count($datos) > 0) ){
             $this->ci->db->trans_begin();
             $resultado = $this->ci->db->insert($this->tabla, $datos);
+            if($idInsertado === FALSE){
+                $this->ci->db->trans_complete();
+            }
             if($idInsertado !== FALSE){
                 if($this->ci->db->trans_status() === FALSE){
                     $this->ci->db->trans_rollback();
