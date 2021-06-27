@@ -83,6 +83,7 @@ class Model_DB {
     
     public function actualizar($datos = array(), $condicion = array()){
         if( (is_array($datos)) && (count($datos) > 0) ){
+            $this->ci->db->trans_begin();
             $obtieneDatos = $datos;
         } else{
             return FALSE;
@@ -101,7 +102,13 @@ class Model_DB {
         }
         $resultado = $this->ci->db->update($this->tabla, $obtieneDatos);
         if ($resultado){
-            return TRUE;
+            if($this->ci->db->trans_status() === FALSE){
+                $this->ci->db->trans_rollback();
+                return FALSE;
+            }else{
+                $this->ci->db->trans_commit();
+                return TRUE;
+            }
         } else {
             return FALSE;
         }
@@ -111,14 +118,14 @@ class Model_DB {
         if( (is_array($datos)) && (count($datos) > 0) ){
             $this->ci->db->trans_begin();
             $resultado = $this->ci->db->insert($this->tabla, $datos);
-            $this->ci->db->trans_complete();
             if($idInsertado !== FALSE){
-                if($this->db->trans_status() === FALSE){
-                    $this->db->trans_rollback();
+                if($this->ci->db->trans_status() === FALSE){
+                    $this->ci->db->trans_rollback();
                     return FALSE;
                 }else{
-                    $this->db->trans_commit();
-                    return $this->db->insert_id();
+                    $resultado_id = $this->ci->db->insert_id();
+                    $this->ci->db->trans_commit();
+                    return $resultado_id;
                 }
             }
             return TRUE;
