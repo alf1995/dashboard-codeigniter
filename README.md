@@ -7,7 +7,7 @@ Panel de administración basico usando codeigniter 3 y el tema adminlte3.
 
 # Requerimientos
 
-- PHP 7.2 o superior
+- PHP 7.3 o superior
 
 # Instalación
 ```
