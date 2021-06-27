@@ -13,7 +13,8 @@ class Recuperar extends CI_Controller {
         $this->load->model(array('m_usuario','m_logs_email'));  
 
         $this->items['carpetaProyecto'] = config_admin()['directorySystem'];
-        $this->items['getUrl'] = base_url().$this->items['carpetaProyecto'].'/'; 
+        $this->items['getUrl'] = base_url().$this->items['carpetaProyecto'].'/';
+        crawler_helper::detectar_bot();
     }
 
 	public function panel()
