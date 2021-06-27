@@ -165,7 +165,6 @@ class Auth {
                     if($this->ci->auth->seguridadAccionModulo($this->ci->accesoSession->accesoTmpId,$this->ci->accesoSession->accesoTmpNivel, $generaAccion['entity'], 'denegar')){
                         if($eliminacionLogica == 1){
                             $texto .= '<small style="padding: 2px; display: inline-block;"><a href="javascript:;" data-url="'.$generaAccion['entity'].'/proceso/denegar/'.$id.'" data-response="'.$generaAccion['response'].'" class="btn btn-warning btn-sm '.$generaAccion['class'].'" data-toggle="tooltip" data-placement="bottom" title="DENEGAR ITEM">';
-
                             $texto .= '<i class="fas fa-lock"></i></a></small>';
                         }
                     }
@@ -174,7 +173,6 @@ class Auth {
                     if($this->ci->auth->seguridadAccionModulo($this->ci->accesoSession->accesoTmpId,$this->ci->accesoSession->accesoTmpNivel, $generaAccion['entity'], 'permitir')){
                         if($eliminacionLogica == 0){
                             $texto .= '<small style="padding: 2px; display: inline-block;"><a href="javascript:;" data-url="'.$generaAccion['entity'].'/proceso/permitir/'.$id.'" data-response="'.$generaAccion['response'].'" class="btn btn-warning btn-sm '.$generaAccion['class'].'" data-toggle="tooltip" data-placement="bottom" title="PERMITIR ITEM">';
-
                             $texto .= '<i class="fas fa-lock-open"></i></a></small>';
                         }
                     }
