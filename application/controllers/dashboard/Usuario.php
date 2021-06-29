@@ -58,14 +58,15 @@ class Usuario extends DashboardController {
                 );
                 $i = 1;
                 foreach($usuario AS $items){
-                    $checkAccion = '<input type="checkbox" name="checkRemover" id="checkRemover" value="'.$items->id.'" />'; 
+                    $checkAccion = '<input type="checkbox" name="checkRemover" id="checkRemover" value="'.$items->id.'" />';
+                    $checkAccionEnd = ($items->eliminacion_logica == 0) ? $checkAccion : '';
                     $fechaRegistro = ($items->fecha_registro >= 1104537600) ? $this->complementos->obtenerFecha($items->fecha_registro,7) : '---';
                     $this->table->add_row(
                         $i, 
                         '<span>'.$items->correo.'</span>', 
                         '<span>'.$fechaRegistro.'</span>', 
                         '<span>'.$items->nombre.' '.$items->apellido.'</span>',  
-                        '', 
+                        '<span>'.$checkAccionEnd.'</span>',
                         $this->auth->formAccion($accion, $items->id, $items->eliminacion_logica)
                     );
                     $i++;
@@ -505,7 +506,7 @@ class Usuario extends DashboardController {
                         }
                     }
                     $message = sprintf(error_helper::msg()->msg201, 'Se eliminaron correctamente los elementos seleccionados.');
-                    echo alerta_exito($message);EXIT; 
+                    echo alerta_exito($message,2);EXIT; 
                 }
                 if($msjError){
                     $message = sprintf(error_helper::msg()->msg6);
