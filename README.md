@@ -59,7 +59,7 @@ Panel de administración basico usando codeigniter 3 y el tema adminlte3.
     MAIL_ENCRYPTION=ssl
 
 ```
-- Luego generamos de configurar nuestro archivo env exportamos la base de datos que se encuentra en el proyecto:
+- Luego de configurar nuestro archivo .env exportamos la base de datos que se encuentra en el proyecto:
 
 # Características
 
